@@ -13,7 +13,7 @@ export default function App() {
 
         <div className={classes.flexDiv}>
           <ProgressiveDonutChart data={progressiveData} />
-          <Legends data={progressiveData} />
+          {/* <Legends data={progressiveData} /> */}
         </div>
 
       </div>
