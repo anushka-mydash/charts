@@ -118,7 +118,7 @@ export default function ProgressiveDonutChart({ data }) {
             .enter()
             .append("text")
             .text((d, i) => {
-                return myData.current[myData.current.length - 1 - i].origVal
+                return myData.current[i].origVal
             })
             .attr("fill", "#000")
             .style("font-size", "14px")
@@ -137,7 +137,7 @@ export default function ProgressiveDonutChart({ data }) {
         for (let i = 0; i < myData.current.length; i++) {
             g
                 .append("text")
-                .text(myData.current[myData.current.length - 1 - i].label)
+                .text(myData.current[i].label)
                 .style("font-size", "14px")
                 .attr("transform", "translate(280," + -1 * (outerRadius + (spacing * i) - 15) + ")");
         }
