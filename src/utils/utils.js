@@ -35,3 +35,7 @@ export const createGradient = (svg, i) => {
 
     return { linearGradientDef }
 }
+
+export const generateRandomNum = (max, min = 0) => {
+    return Math.floor((Math.random() * max) + min)
+}
