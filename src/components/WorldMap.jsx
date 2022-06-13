@@ -41,13 +41,6 @@ export default function WorldMap({ mapData }) {
                 .style("stroke", "#dddddd")
         })
 
-        // data.forEach(d => {
-        //     svg
-        //         .selectAll(`.${d.id}`)
-        //         .attr("fill", d.color)
-        // });
-
-
     }, [mapData, dimensions])
 
     return (

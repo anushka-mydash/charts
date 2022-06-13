@@ -117,7 +117,7 @@ export default function ProgressiveDonutChart({ data }) {
             .enter()
             .append("text")
             .text((d, i) => {
-                return myData.current[i].origVal
+                return myData.current[i].origVal.toFixed(0)
             })
             .attr("fill", "#000")
             .style("font-size", "14px")

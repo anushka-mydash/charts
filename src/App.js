@@ -3,17 +3,16 @@ import LayeredBarChart from './components/LayeredBarChart'
 import ProgressiveDonutChart from './components/ProgressiveDonutChart'
 // import PieChart from './components/PieChart'
 import WorldMap from './components/WorldMap'
+import BiDirectionalBarChart from './components/BiDirectionalBarChart'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
 import {
   progressiveData,
-  layeredBarData,
-  certificationRequirement,
-  layeredBarLegends,
+  layeredBarData, certificationRequirement, layeredBarLegends,
   // pieChartData,
-  worldMapData,
-  worldLegendData,
+  worldMapData, worldLegendData,
+  biData, biLegends
 } from "./utils/data.js"
 
 export default function App() {
@@ -37,6 +36,14 @@ export default function App() {
         <div className={classes.flexDiv}>
           <WorldMap mapData={worldMapData} />
           <Legend data={worldLegendData} />
+        </div>
+
+        <div className={classes.flexDiv}>
+          <BiDirectionalBarChart
+            data={biData}
+            certificationRequirement={certificationRequirement}
+          />
+          <Legend data={biLegends} />
         </div>
 
       </div>

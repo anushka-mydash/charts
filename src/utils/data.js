@@ -95,3 +95,21 @@ export const worldLegendData = [
     { label: "0", color: "#eeeeee" },
 ]
 
+export const biData = [
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "10" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "20" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "30" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "40" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "50" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "60" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "70" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "80" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "90" },
+    { debit: generateRandomNum(5), credit: generateRandomNum(-1, 0.1), balance: generateRandomNum(5), label: "100" },
+]
+
+export const biLegends = [
+    { label: "Debit", color: "#A0D995" },
+    { label: "Credit", color: "#EF9F9F" },
+    { label: "Balance", color: "#34B3F1" },
+]
