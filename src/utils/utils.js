@@ -18,16 +18,16 @@ export const createGradient = (svg, i) => {
 
     linearGradientDef.append("stop")
         .attr("offset", "0%")
-        .style("stop-opacity", "0.1")
+        .style("stop-opacity", "0.3")
 
 
     linearGradientDef.append("stop")
         .attr("offset", "50%")
-        .style("stop-opacity", "0.2")
+        .style("stop-opacity", "0.5")
 
     linearGradientDef.append("stop")
         .attr("offset", "70%")
-        .style("stop-opacity", "0.7")
+        .style("stop-opacity", "0.8")
 
     linearGradientDef.append("stop")
         .attr("offset", "80%")
@@ -36,6 +36,6 @@ export const createGradient = (svg, i) => {
     return { linearGradientDef }
 }
 
-export const generateRandomNum = (max, min = 0) => {
+export const generateRandomNum = (max, min = 1) => {
     return Math.floor((Math.random() * max) + min)
 }

@@ -83,7 +83,7 @@ export default function ProgressiveDonutChart({ data }) {
             .attr("fill", (d, i) => {
                 return d.color
             })
-            .attr("stroke", "#F9F9F9")
+            // .attr("stroke", "#F9F9F9")
             .attr("style", "z-index:10");
 
         for (let i = 0; i < myData.current.length; i++) {

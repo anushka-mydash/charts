@@ -1,8 +1,9 @@
 import React from 'react'
+import LayeredBarChart from './components/LayeredBarChart'
 import ProgressiveDonutChart from './components/ProgressiveDonutChart'
-import Legends from "./components/Legends/Legends";
+import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
-import { progressiveData } from "./utils/data.js"
+import { progressiveData, layeredBarData, certificationRequirement, layeredBarLegends } from "./utils/data.js"
 
 export default function App() {
 
@@ -13,7 +14,14 @@ export default function App() {
 
         <div className={classes.flexDiv}>
           <ProgressiveDonutChart data={progressiveData} />
-          {/* <Legends data={progressiveData} /> */}
+        </div>
+
+        <div className={classes.flexDiv}>
+          <LayeredBarChart
+            data={layeredBarData}
+            certificationRequirement={certificationRequirement}
+          />
+          <Legend data={layeredBarLegends} />
         </div>
 
       </div>
