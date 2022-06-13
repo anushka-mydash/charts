@@ -48,3 +48,7 @@ code {
 .axisGrid path {
   stroke-width: 0;
 }
+
+.rotate {
+  transform: rotate(180deg) translate(0, 0);
+}

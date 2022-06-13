@@ -1,4 +1,4 @@
-import { generateRandomNum } from './utils'
+import { generateRandomNum, generateRandomCountry } from './utils'
 
 export const progressiveData =
     [
@@ -67,4 +67,31 @@ export const layeredBarLegends = [
     { label: "Candidate Score", color: "#AB57FC" },
     { label: "Industry Average", color: "#242F9B" },
     { label: "Certification Requirement", color: "#FF5D5D" },
+
 ]
+
+export const pieChartData = [
+    { label: "Not Due", value: 104891, color: "#34B3F1", percentage: 51 },
+    { label: "1-30", value: 17208, color: "#F15412", percentage: 8 },
+    { label: "31-60", value: 15900, color: "#FFA500", percentage: 8 },
+    { label: "61-90", value: 15675, color: "#C6DE41", percentage: 7 },
+    { label: ">90", value: 52853, color: "#242F9B", percentage: 26 },
+]
+
+export const worldMapData = [
+    { id: generateRandomCountry(), color: "#FF2626" },
+    { id: generateRandomCountry(), color: "#F47C7C" },
+    { id: generateRandomCountry(), color: "#FFC3C3" },
+    { id: generateRandomCountry(), color: "#FFC3C3" },
+]
+
+export const worldLegendData = [
+    { label: "<25K", color: "#FF2626" },
+    { label: "21K-24.9K", color: "#F24C4C" },
+    { label: "15K-19.9K", color: "#F47C7C" },
+    { label: "10K-14.9K", color: "#EF9F9F" },
+    { label: "5K-9.9K", color: "#FFA8A8" },
+    { label: "<5K", color: "#FFC3C3" },
+    { label: "0", color: "#eeeeee" },
+]
+

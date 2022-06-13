@@ -10,7 +10,6 @@ export default function LayeredBarChart({ data, certificationRequirement }) {
     const dimensions = useResizeObserver(svgWrapper);
 
     useEffect(() => {
-        console.log(data)
         if (!dimensions) {
             return;
         }
