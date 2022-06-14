@@ -2,10 +2,10 @@ import { generateRandomNum, generateRandomCountry, generateRandomWorldColor } fr
 
 export const progressiveData =
     [
-        { value: generateRandomNum(5000), color: "#FF06B7", label: "Old Sessions" },
-        { value: generateRandomNum(5000), color: "#47B5FF", label: "New Sessions" },
-        { value: generateRandomNum(5000), color: "#FFA500", label: "Old Users" },
-        { value: generateRandomNum(5000), color: "#1F4690", label: "New Users" },
+        { value: generateRandomNum(5000), color: "#E83F16", label: "Old Sessions" },
+        { value: generateRandomNum(5000), color: "#FFBE00", label: "New Sessions" },
+        { value: generateRandomNum(5000), color: "#70A72F", label: "Old Users" },
+        { value: generateRandomNum(5000), color: "#32A07F", label: "New Users" },
     ]
 
 export const layeredBarData = [
@@ -98,13 +98,13 @@ export const worldMapData = [
 ]
 
 export const worldLegendData = [
-    { label: "<25K", color: "#FF2626" },
-    { label: "21K-24.9K", color: "#F24C4C" },
-    { label: "15K-19.9K", color: "#F47C7C" },
-    { label: "10K-14.9K", color: "#EF9F9F" },
-    { label: "5K-9.9K", color: "#FFA8A8" },
-    { label: "<5K", color: "#FFC3C3" },
-    { label: "0", color: "#eeeeee" },
+    { label: "<25K", color: "#F53C56" },
+    { label: "21K-24.9K", color: "#F65C72" },
+    { label: "15K-19.9K", color: "#F98C9B" },
+    { label: "10K-14.9K", color: "#FAA5B1" },
+    { label: "5K-9.9K", color: "#FBC4CC" },
+    { label: "<5K", color: "#FDDBE0" },
+    { label: "0", color: "#F2F2F2" },
 ]
 
 export const biData = [

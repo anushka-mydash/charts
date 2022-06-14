@@ -31,14 +31,14 @@ export default function WorldMap({ mapData }) {
                 .join("path")
                 .attr("fill", (d) => {
                     const res = mapData.filter(el => d.id === el.id)
-                    return res.length > 0 ? res[0].color : "#eeeeee"
+                    return res.length > 0 ? res[0].color : "#F2F2F2"
                 }
                 )
                 .attr("d", d3.geoPath()
                     .projection(projection)
                 )
                 .attr("class", (d) => d.id)
-                .style("stroke", "#dddddd")
+                .style("stroke", "#6E6E6E")
         })
 
     }, [mapData, dimensions])

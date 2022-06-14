@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LayeredBarChart from './components/LayeredBarChart'
 import ProgressiveDonutChart from './components/ProgressiveDonutChart'
 import PieChart from './components/PieChart'
@@ -20,6 +20,12 @@ import {
 import SmallPieChart from './components/SmallPieChart'
 
 export default function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const d = otherPieData.filter((d) => d.label !== "Other")
+    setData(d);
+  }, [])
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Charts</h1>
@@ -66,7 +72,7 @@ export default function App() {
           <StackedBarChart
             data={stackedBarData}
           />
-          <Legend data={[...otherPieData, ...stackedBarData]} />
+          <Legend data={[...data, ...stackedBarData]} />
         </div>
 
       </div>
