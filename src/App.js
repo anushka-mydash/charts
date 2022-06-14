@@ -4,6 +4,8 @@ import ProgressiveDonutChart from './components/ProgressiveDonutChart'
 import PieChart from './components/PieChart'
 import WorldMap from './components/WorldMap'
 import BiDirectionalBarChart from './components/BiDirectionalBarChart'
+import OtherPie from './components/OtherPie'
+import StackedBarChart from './components/StackedBarChart'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -12,7 +14,8 @@ import {
   layeredBarData, certificationRequirement, layeredBarLegends,
   pieChartData,
   worldMapData, worldLegendData,
-  biData, biLegends
+  biData, biLegends,
+  otherPieData, stackedBarData
 } from "./utils/data.js"
 import SmallPieChart from './components/SmallPieChart'
 
@@ -54,6 +57,16 @@ export default function App() {
             data={pieChartData}
           />
           <Legend data={pieChartData} />
+        </div>
+
+        <div className={classes.flexDiv}>
+          <OtherPie
+            data={otherPieData}
+          />
+          <StackedBarChart
+            data={stackedBarData}
+          />
+          <Legend data={[...otherPieData, ...stackedBarData]} />
         </div>
 
       </div>

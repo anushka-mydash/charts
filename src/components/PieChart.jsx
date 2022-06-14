@@ -46,6 +46,7 @@ export default function PieChart({ data }) {
             .attr("y2", -chartHeight / 4)
             .attr("fill", "none")
             .attr("stroke", "#000")
+            
         const pie = d3.pie().value((d) => d.percentage);
 
         const path = d3.arc()

@@ -13,6 +13,7 @@ export default function SmallPieChart({ data }) {
         if (!dimensions) {
             return;
         }
+        //  eslint-disable-next-line
         data = data.filter((d) => d.label !== "Not Due");
 
         const margin = 0;

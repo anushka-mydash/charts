@@ -125,3 +125,20 @@ export const biLegends = [
     { label: "Credit", color: "#EF9F9F" },
     { label: "Balance", color: "#34B3F1" },
 ]
+
+export const otherPieData = [
+    { value: 0.25, color: "#F94C66", label: "Something 1" },
+    { value: 0.08, color: "#53BF9D", label: "Something 2" },
+    { value: 0.08, color: "#9EB23B", label: "Something 3" },
+    { value: 0.08, color: "#BD4291", label: "Something 4" },
+    { value: 0.07, color: "#FFEE63", label: "Something 5" },
+    { value: 0.14, color: "#BABD42", label: "Something 6" },
+    { value: 0.54, color: "lightgrey", label: "Other" }
+]
+
+export const stackedBarData = [
+    { value: 0.25, color: "#FDAF75", label: "Something 8" },
+    { value: 0.15, color: "#333C83", label: "Something 9" },
+    { value: 0.4, color: "#8479E1", label: "Something 7" },
+    { value: 0.3, color: "#00AFC1", label: "Something 10" },
+]

@@ -49,5 +49,5 @@ export const generateRandomCountry = (max = countriesId.length, min = 0) => {
 
 export const generateRandomWorldColor = (max = worldColors.length, min = 0) => {
     return worldColors[Math.floor((Math.random() * max) + min)]
-
 }
+
