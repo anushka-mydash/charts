@@ -10,7 +10,6 @@ export default function BiDirectionalBarChart({ data }) {
     const dimensions = useResizeObserver(svgWrapper);
 
     useEffect(() => {
-        console.log(data)
         if (!dimensions) {
             return;
         }
@@ -70,7 +69,6 @@ export default function BiDirectionalBarChart({ data }) {
             .attr("y", chartHeight - yScale(4))
             .attr("width", xScale.bandwidth() - 10)
             .attr("height", function (d) {
-                console.log(chartHeight - yScale(Math.abs(d.credit)) - yScale(4))
                 return chartHeight - yScale(Math.abs(d.credit)) - yScale(4)
             })
             .attr("fill", "#EF9F9F");

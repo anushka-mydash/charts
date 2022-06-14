@@ -1,7 +1,7 @@
 import React from 'react'
 import LayeredBarChart from './components/LayeredBarChart'
 import ProgressiveDonutChart from './components/ProgressiveDonutChart'
-// import PieChart from './components/PieChart'
+import PieChart from './components/PieChart'
 import WorldMap from './components/WorldMap'
 import BiDirectionalBarChart from './components/BiDirectionalBarChart'
 import Legend from './components/Legends/Legends'
@@ -10,10 +10,11 @@ import classes from "./styles.module.scss"
 import {
   progressiveData,
   layeredBarData, certificationRequirement, layeredBarLegends,
-  // pieChartData,
+  pieChartData,
   worldMapData, worldLegendData,
   biData, biLegends
 } from "./utils/data.js"
+import SmallPieChart from './components/SmallPieChart'
 
 export default function App() {
   return (
@@ -41,9 +42,18 @@ export default function App() {
         <div className={classes.flexDiv}>
           <BiDirectionalBarChart
             data={biData}
-            certificationRequirement={certificationRequirement}
           />
           <Legend data={biLegends} />
+        </div>
+
+        <div className={classes.flexDiv}>
+          <PieChart
+            data={pieChartData}
+          />
+          <SmallPieChart
+            data={pieChartData}
+          />
+          <Legend data={pieChartData} />
         </div>
 
       </div>

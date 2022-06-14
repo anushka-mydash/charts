@@ -1,4 +1,4 @@
-import { generateRandomNum, generateRandomCountry } from './utils'
+import { generateRandomNum, generateRandomCountry, generateRandomWorldColor } from './utils'
 
 export const progressiveData =
     [
@@ -79,10 +79,22 @@ export const pieChartData = [
 ]
 
 export const worldMapData = [
-    { id: generateRandomCountry(), color: "#FF2626" },
-    { id: generateRandomCountry(), color: "#F47C7C" },
-    { id: generateRandomCountry(), color: "#FFC3C3" },
-    { id: generateRandomCountry(), color: "#FFC3C3" },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
+    { id: generateRandomCountry(), color: generateRandomWorldColor() },
 ]
 
 export const worldLegendData = [
