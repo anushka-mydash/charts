@@ -52,3 +52,6 @@ export const generateRandomWorldColor = (max = worldColors.length, min = 0) => {
     return worldColors[Math.floor((Math.random() * max) + min)]
 }
 
+export const degToRad = (deg) => {
+    return (deg * Math.PI) / 180
+}

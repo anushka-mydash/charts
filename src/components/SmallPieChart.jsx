@@ -17,14 +17,14 @@ export default function SmallPieChart({ data }) {
         data = data.filter((d) => d.label !== "Not Due");
 
         const margin = 0;
-        const chartWidth = dimensions.width - margin;
+        const chartWidth = dimensions.width;
         const chartHeight = dimensions.height - margin;
         const radius = 150
 
         const svg = d3.select(selectedSvg.current);
 
         const g = svg.append("g")
-            .attr("transform", "translate(" + (chartWidth - radius) + "," + chartHeight / 2 + ")")
+            .attr("transform", "translate(" + chartWidth / 2 + "," + chartHeight / 2 + ")")
 
         const pie = d3.pie().value((d) => d.percentage);
 
@@ -59,7 +59,7 @@ export default function SmallPieChart({ data }) {
     }, [dimensions, data])
 
     return (
-        <div ref={svgWrapper} style={{ minWidth: "45vw", minHeight: "300px", marginLeft: "-40.5vw" }}>
+        <div ref={svgWrapper} style={{ minWidth: "500px", minHeight: "300px" }}>
             <svg
                 ref={selectedSvg}
                 style={{ width: "100%", minHeight: "500px" }}

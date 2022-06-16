@@ -95,7 +95,13 @@ export default function App() {
         <div className={classes.basicDiv}>
           <ProgressBars data={progressBar} />
           <div className={classes.flexDiv}>
-            {colorsProgressBar.map((e) => <Legend data={[e]} />)}
+            {colorsProgressBar.map((e, i) => <Legend key={i} data={[e]} />)}
+          </div>
+        </div>
+
+        <div className={classes.basicDiv}>
+          <div className={classes.flexDiv}>
+            {colorsProgressBar.map((e, i) => <Legend key={i} data={[e]} />)}
           </div>
         </div>
 

@@ -10,7 +10,6 @@ export default function LineChart({ data, color }) {
     const dimensions = useResizeObserver(svgWrapper);
 
     useEffect(() => {
-        console.log(data, color)
         if (!dimensions) {
             return;
         }
