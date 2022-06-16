@@ -6,6 +6,7 @@ import WorldMap from './components/WorldMap'
 import BiDirectionalBarChart from './components/BiDirectionalBarChart'
 import OtherPie from './components/OtherPie'
 import StackedBarChart from './components/StackedBarChart'
+import LineChart from './components/LineChart'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -15,9 +16,14 @@ import {
   pieChartData,
   worldMapData, worldLegendData,
   biData, biLegends,
-  otherPieData, stackedBarData
+  otherPieData, stackedBarData,
+  lineChartData,
+  progressBar,
+  colorsProgressBar
 } from "./utils/data.js"
+
 import SmallPieChart from './components/SmallPieChart'
+import ProgressBars from './components/ProgressBars'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -73,6 +79,24 @@ export default function App() {
             data={stackedBarData}
           />
           <Legend data={[...data, ...stackedBarData]} />
+        </div>
+
+        <div className={classes.basicDiv}>
+          <LineChart
+            data={lineChartData.data}
+            color={lineChartData.color}
+          />
+          <div className={classes.flexDiv}>
+            <Legend data={[{ label: "Data 1", color: "#F9D923" }]} />
+            <Legend data={[{ label: "Data 2", color: "#1363DF" }]} />
+          </div>
+        </div>
+
+        <div className={classes.basicDiv}>
+          <ProgressBars data={progressBar} />
+          <div className={classes.flexDiv}>
+            {colorsProgressBar.map((e) => <Legend data={[e]} />)}
+          </div>
         </div>
 
       </div>

@@ -142,3 +142,37 @@ export const stackedBarData = [
     { value: 0.4, color: "#8479E1", label: "Something 7" },
     { value: 0.3, color: "#00AFC1", label: "Something 10" },
 ]
+
+export const lineChartData =
+{
+    data:
+        [
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Jan" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Feb" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Mar" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Apr" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "May" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Jun" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Jul" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Aug" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Sep" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Oct" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Nov" },
+            { val1: Math.floor(generateRandomNum(20, 10)), val2: Math.floor(generateRandomNum(20, 10)), label: "Dec" },
+        ],
+    color: ["#F9D923", "#1363DF"]
+}
+
+export const progressBar = [
+    // Math.floor(generateRandomNum(120)),
+    // Math.floor(generateRandomNum(120)),
+    // Math.floor(generateRandomNum(120)),
+    25, 77, 100, 120
+]
+
+export const colorsProgressBar = [
+    { color: "#FC4F4F", label: "Low" },
+    { color: "#FFC54D", label: "Middle" },
+    { color: "#6BCB77", label: "Good" },
+    { color: "#4D96FF", label: "High" },
+]
