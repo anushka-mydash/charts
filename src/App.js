@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import LayeredBarChart from './components/LayeredBarChart'
 import ProgressiveDonutChart from './components/ProgressiveDonutChart'
-import PieChart from './components/PieChart'
 import WorldMap from './components/WorldMap'
 import BiDirectionalBarChart from './components/BiDirectionalBarChart'
 import OtherPie from './components/OtherPie'
 import StackedBarChart from './components/StackedBarChart'
 import LineChart from './components/LineChart'
+import ProgressCircle from './components/ProgressCircle'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
 import {
   progressiveData,
   layeredBarData, certificationRequirement, layeredBarLegends,
-  pieChartData,
   worldMapData, worldLegendData,
   biData, biLegends,
   otherPieData, stackedBarData,
@@ -22,10 +21,8 @@ import {
   colorsProgressBar
 } from "./utils/data.js"
 
-import SmallPieChart from './components/SmallPieChart'
 import ProgressBars from './components/ProgressBars'
 import MultiplePies from './components/MultiplePies'
-import Legends from './components/Legends/Legends'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -64,13 +61,6 @@ export default function App() {
         </div>
 
         <div className={classes.flexDiv}>
-          {/* <PieChart
-            data={pieChartData}
-          />
-          <SmallPieChart
-            data={pieChartData}
-          />
-          <Legend data={pieChartData} /> */}
           <MultiplePies />
           {/* <Legends data={pieChartData} /> */}
 
@@ -105,6 +95,10 @@ export default function App() {
         </div>
 
         <div className={classes.basicDiv}>
+          <div className={classes.flexDiv}>
+            <ProgressCircle data={[25, 65]} />
+            <ProgressCircle data={[100, 120]} />
+          </div>
           <div className={classes.flexDiv}>
             {colorsProgressBar.map((e, i) => <Legend key={i} data={[e]} />)}
           </div>

@@ -7,7 +7,6 @@ import { degToRad } from "../utils/utils";
 export default function PieChart({ data, selectedSvg, svgWrapper }) {
 
     const dimensions = useResizeObserver(svgWrapper);
-
     useEffect(() => {
         if (!dimensions) {
             return;
@@ -27,33 +26,20 @@ export default function PieChart({ data, selectedSvg, svgWrapper }) {
         ]
 
         // chartData1[0] should be smaller always
-        if (chartData1[0].percentage > chartData1[1].percentage) {
+        if (chartData1[0].label === "Not Due") {
             let temp = chartData1[0]
             chartData1[0] = chartData1[1]
             chartData1[1] = temp
         }
+        console.log(chartData1)
+
         let angle = chartData1.map((d) => (d.percentage * 360) / 100)
         const svg = d3.select(selectedSvg.current);
 
         const g = svg.append("g")
             .attr("transform", "translate(" + (chartWidth / 4) + "," + chartHeight / 2 + ")")
 
-        g
-            .append("line")
-            .attr("x1", 60)
-            .attr("y1", -(chartHeight - radius) / 1.8)
-            .attr("x2", 550)
-            .attr("y2", -chartHeight / 3.3)
-            .attr("fill", "none")
-            .attr("stroke", "#000")
-        g
-            .append("line")
-            .attr("x1", 60)
-            .attr("y1", (chartHeight - radius) / 1.8)
-            .attr("x2", 550)
-            .attr("y2", chartHeight / 3.3)
-            .attr("fill", "none")
-            .attr("stroke", "#000")
+
 
         const arc0 = d3
             .arc()
@@ -83,10 +69,14 @@ export default function PieChart({ data, selectedSvg, svgWrapper }) {
             .enter()
 
         p0.append("path")
-            .attr("id", (d, i) => "pathSmall")
+            .attr("id", (d, i) => "pathSmall0")
             .attr("d", arc0)
             .attr("transform", "translate(0,0)")
             .attr("fill", (d) => d.color)
+
+
+        let arr = []
+        arr.push(d3.select("#pathSmall0")?.attr("d"))
 
         const p1 = g
             .selectAll("path1")
@@ -94,10 +84,16 @@ export default function PieChart({ data, selectedSvg, svgWrapper }) {
             .enter()
 
         p1.append("path")
-            .attr("id", (d, i) => "pathSmall")
+            .attr("id", (d, i) => "pathSmall1")
             .attr("d", arc1)
             .attr("transform", "translate(0,0)")
             .attr("fill", (d) => d.color)
+
+        arr.push(d3.select("#pathSmall1")?.attr("d"))
+
+        arr = arr.map((d) => {
+            return d.split("A")[0]
+        })
 
         p0
             .append("text")
@@ -117,6 +113,16 @@ export default function PieChart({ data, selectedSvg, svgWrapper }) {
                 return d.percentage + "%";
             });
 
+        g
+            .append("path")
+            .attr("d", arr[0] + "l550, 60")
+            .attr("fill", "none")
+            .attr("stroke", "#000")
+        g
+            .append("path")
+            .attr("d", arr[1] + " l550, -60")
+            .attr("fill", "none")
+            .attr("stroke", "#000")
 
     }, [dimensions, data, selectedSvg])
 
