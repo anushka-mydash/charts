@@ -24,6 +24,8 @@ import {
 
 import SmallPieChart from './components/SmallPieChart'
 import ProgressBars from './components/ProgressBars'
+import MultiplePies from './components/MultiplePies'
+import Legends from './components/Legends/Legends'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -62,13 +64,16 @@ export default function App() {
         </div>
 
         <div className={classes.flexDiv}>
-          <PieChart
+          {/* <PieChart
             data={pieChartData}
           />
           <SmallPieChart
             data={pieChartData}
           />
-          <Legend data={pieChartData} />
+          <Legend data={pieChartData} /> */}
+          <MultiplePies />
+          {/* <Legends data={pieChartData} /> */}
+
         </div>
 
         <div className={classes.flexDiv}>

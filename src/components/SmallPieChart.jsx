@@ -3,9 +3,8 @@ import * as d3 from "d3";
 import { useResizeObserver } from "../utils/resizeObserver";
 // import classes from "../styles.module.scss"
 
-export default function SmallPieChart({ data }) {
-    const selectedSvg = useRef();
-    const svgWrapper = useRef();
+export default function SmallPieChart({ data, selectedSvg, svgWrapper }) {
+
 
     const dimensions = useResizeObserver(svgWrapper);
 
@@ -16,9 +15,12 @@ export default function SmallPieChart({ data }) {
         //  eslint-disable-next-line
         data = data.filter((d) => d.label !== "Not Due");
 
-        const margin = 0;
-        const chartWidth = dimensions.width;
-        const chartHeight = dimensions.height - margin;
+        const margin = {
+            top: 600,
+            left: 200
+        };
+        const chartWidth = dimensions.width + margin.top;
+        const chartHeight = dimensions.height - margin.left;
         const radius = 150
 
         const svg = d3.select(selectedSvg.current);
@@ -59,11 +61,5 @@ export default function SmallPieChart({ data }) {
     }, [dimensions, data])
 
     return (
-        <div ref={svgWrapper} style={{ minWidth: "500px", minHeight: "300px" }}>
-            <svg
-                ref={selectedSvg}
-                style={{ width: "100%", minHeight: "500px" }}
-            >
-            </svg>
-        </div>)
+        <></>)
 }

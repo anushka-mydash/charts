@@ -4,9 +4,7 @@ import { useResizeObserver } from "../utils/resizeObserver";
 import { degToRad } from "../utils/utils";
 // import classes from "../styles.module.scss"
 
-export default function PieChart({ data }) {
-    const selectedSvg = useRef();
-    const svgWrapper = useRef();
+export default function PieChart({ data, selectedSvg, svgWrapper }) {
 
     const dimensions = useResizeObserver(svgWrapper);
 
@@ -14,9 +12,12 @@ export default function PieChart({ data }) {
         if (!dimensions) {
             return;
         }
-        const margin = 0;
-        const chartWidth = dimensions.width - margin;
-        const chartHeight = dimensions.height - margin;
+        const margin = {
+            top: 20,
+            left: 200
+        };
+        const chartWidth = dimensions.width - margin.top;
+        const chartHeight = dimensions.height - margin.left;
         const radius = 200
 
         let chartData1 = data.filter((d) => d.label === "Not Due")
@@ -35,24 +36,24 @@ export default function PieChart({ data }) {
         const svg = d3.select(selectedSvg.current);
 
         const g = svg.append("g")
-            .attr("transform", "translate(" + (chartWidth / 2) + "," + chartHeight / 2 + ")")
+            .attr("transform", "translate(" + (chartWidth / 4) + "," + chartHeight / 2 + ")")
 
-        // g
-        //     .append("line")
-        //     .attr("x1", 60)
-        //     .attr("y1", -(chartHeight - radius) / 1.7)
-        //     .attr("x2", 350)
-        //     .attr("y2", -chartHeight / 4)
-        //     .attr("fill", "none")
-        //     .attr("stroke", "#000")
-        // g
-        //     .append("line")
-        //     .attr("x1", 60)
-        //     .attr("y1", (chartHeight - radius) / 1.7)
-        //     .attr("x2", 350)
-        //     .attr("y2", chartHeight / 4)
-        //     .attr("fill", "none")
-        //     .attr("stroke", "#000")
+        g
+            .append("line")
+            .attr("x1", 60)
+            .attr("y1", -(chartHeight - radius) / 1.8)
+            .attr("x2", 550)
+            .attr("y2", -chartHeight / 3.3)
+            .attr("fill", "none")
+            .attr("stroke", "#000")
+        g
+            .append("line")
+            .attr("x1", 60)
+            .attr("y1", (chartHeight - radius) / 1.8)
+            .attr("x2", 550)
+            .attr("y2", chartHeight / 3.3)
+            .attr("fill", "none")
+            .attr("stroke", "#000")
 
         const arc0 = d3
             .arc()
@@ -117,14 +118,8 @@ export default function PieChart({ data }) {
             });
 
 
-    }, [dimensions, data])
+    }, [dimensions, data, selectedSvg])
 
     return (
-        <div ref={svgWrapper} style={{ minWidth: "500px", minHeight: "300px" }}>
-            <svg
-                ref={selectedSvg}
-                style={{ width: "100%", minHeight: "500px", flex: 0.4 }}
-            >
-            </svg>
-        </div>)
+        <></>)
 }
