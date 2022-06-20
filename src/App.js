@@ -9,6 +9,7 @@ import LineChart from './components/LineChart'
 import ProgressCircle from './components/ProgressCircle'
 import Stack from './components/Stack'
 import HorizontalFunnel from './components/HorizontalFunnel'
+import AreaChart from './components/AreaChart'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -117,9 +118,10 @@ export default function App() {
 
         <div className={classes.basicDiv}>
           <HorizontalFunnel data={funnel} />
-          {/* <div className={classes.flexDiv}>
-            {stackCol.map((e, i) => <Legend key={i} data={[e]} />)}
-          </div> */}
+        </div>
+
+        <div className={classes.basicDiv}>
+          <AreaChart />
         </div>
 
       </div>
