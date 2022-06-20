@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { useResizeObserver } from "../utils/resizeObserver";
 // import classes from "../styles.module.scss"
 
-export default function HorizontalFunnel({ data }) {
+export default function VerticalFunnel({ data }) {
     const selectedSvg = useRef();
     const svgWrapper = useRef();
 

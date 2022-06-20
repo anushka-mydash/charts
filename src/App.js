@@ -10,6 +10,7 @@ import ProgressCircle from './components/ProgressCircle'
 import Stack from './components/Stack'
 import HorizontalFunnel from './components/HorizontalFunnel'
 import AreaChart from './components/AreaChart'
+import ScatterPlot from './components/ScatterPlot'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -23,7 +24,8 @@ import {
   progressBar,
   colorsProgressBar,
   stackData, stackCol,
-  funnel
+  funnel,
+  scatterPlot
 } from "./utils/data.js"
 
 import ProgressBars from './components/ProgressBars'
@@ -122,6 +124,14 @@ export default function App() {
 
         <div className={classes.basicDiv}>
           <AreaChart />
+        </div>
+
+        <div className={classes.basicDiv}>
+          <ScatterPlot data={scatterPlot} />
+          <div className={classes.flexDiv}>
+            <Legend data={[{ color: "#3AB0FF", label: "Data" }]} />
+            <Legend data={[{ color: "#F15412", label: "Data Avg" }]} />
+          </div>
         </div>
 
       </div>
