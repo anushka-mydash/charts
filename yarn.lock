@@ -3416,7 +3416,7 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.0.tgz#4ddcac3718d787cf9df0d1b7d15033925c8f29f2"
   integrity sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==
 
-"d3-array@2 - 3", "d3-array@2.10.0 - 3", "d3-array@2.5.0 - 3", d3-array@3:
+"d3-array@2 - 3", "d3-array@2.10.0 - 3", "d3-array@2.5.0 - 3", d3-array@3, d3-array@^3.0.1:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-3.1.6.tgz#0342c835925826f49b4d16eb7027aec334ffc97d"
   integrity sha512-DCbBBNuKOeiR9h04ySRBMW52TFVc91O9wJziuyXw6Ztmy8D3oZbmCkOO3UHKC7ceNJsN2Mavo9+vwV8EAEUXzA==
@@ -3487,7 +3487,7 @@ d3-delaunay@6:
     iconv-lite "0.6"
     rw "1"
 
-"d3-ease@1 - 3", d3-ease@3:
+"d3-ease@1 - 3", d3-ease@3, d3-ease@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-3.0.1.tgz#9658ac38a2140d59d346160f1f6c30fda0bd12f4"
   integrity sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==
@@ -3512,6 +3512,19 @@ d3-force@3:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.0.tgz#9260e23a28ea5cb109e93b21a06e24e2ebd55641"
   integrity sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==
+
+d3-funnel@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/d3-funnel/-/d3-funnel-2.1.1.tgz#70f1e8c55bb4949fe8f1e1a2dfa2f62c7ce43ffa"
+  integrity sha512-hbre5nt02MMgaAbFDSeedp39AYtQ2NzM+CaGOVGyDCRQD3nJzp8HR0zyvUKRRBkRKjrDEM1/PZjzzmbeLbs0oA==
+  dependencies:
+    d3-array "^3.0.1"
+    d3-ease "^3.0.1"
+    d3-scale "^4.0.0"
+    d3-scale-chromatic "^3.0.0"
+    d3-selection "^3.0.0"
+    d3-transition "^3.0.0"
+    nanoid "^3.1.16"
 
 d3-geo@3:
   version "3.0.1"
@@ -3552,7 +3565,7 @@ d3-random@3:
   resolved "https://registry.yarnpkg.com/d3-random/-/d3-random-3.0.1.tgz#d4926378d333d9c0bfd1e6fa0194d30aebaa20f4"
   integrity sha512-FXMe9GfxTxqd5D6jFsQ+DJ8BJS4E/fT5mqqdjovykEB2oFbTMDVdg1MGFxfQW+FBOGoB++k8swBrgwSHT1cUXQ==
 
-d3-scale-chromatic@3:
+d3-scale-chromatic@3, d3-scale-chromatic@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/d3-scale-chromatic/-/d3-scale-chromatic-3.0.0.tgz#15b4ceb8ca2bb0dcb6d1a641ee03d59c3b62376a"
   integrity sha512-Lx9thtxAKrO2Pq6OO2Ua474opeziKr279P/TKZsMAhYyNDD3EnCffdbgeSYN5O7m2ByQsxtuP2CSDczNUIZ22g==
@@ -3560,7 +3573,7 @@ d3-scale-chromatic@3:
     d3-color "1 - 3"
     d3-interpolate "1 - 3"
 
-d3-scale@4:
+d3-scale@4, d3-scale@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-4.0.2.tgz#82b38e8e8ff7080764f8dcec77bd4be393689396"
   integrity sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==
@@ -3571,7 +3584,7 @@ d3-scale@4:
     d3-time "2.1.1 - 3"
     d3-time-format "2 - 4"
 
-"d3-selection@2 - 3", d3-selection@3:
+"d3-selection@2 - 3", d3-selection@3, d3-selection@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-3.0.0.tgz#c25338207efa72cc5b9bd1458a1a41901f1e1b31"
   integrity sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ==
@@ -3602,7 +3615,7 @@ d3-shape@3:
   resolved "https://registry.yarnpkg.com/d3-timer/-/d3-timer-3.0.1.tgz#6284d2a2708285b1abb7e201eda4380af35e63b0"
   integrity sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==
 
-"d3-transition@2 - 3", d3-transition@3:
+"d3-transition@2 - 3", d3-transition@3, d3-transition@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/d3-transition/-/d3-transition-3.0.1.tgz#6869fdde1448868077fdd5989200cb61b2a1645f"
   integrity sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==
@@ -6287,7 +6300,7 @@ multicast-dns@^7.2.5:
     dns-packet "^5.2.2"
     thunky "^1.0.2"
 
-nanoid@^3.3.4:
+nanoid@^3.1.16, nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==

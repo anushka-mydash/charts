@@ -7,6 +7,8 @@ import OtherPie from './components/OtherPie'
 import StackedBarChart from './components/StackedBarChart'
 import LineChart from './components/LineChart'
 import ProgressCircle from './components/ProgressCircle'
+import Stack from './components/Stack'
+import HorizontalFunnel from './components/HorizontalFunnel'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -18,7 +20,9 @@ import {
   otherPieData, stackedBarData,
   lineChartData,
   progressBar,
-  colorsProgressBar
+  colorsProgressBar,
+  stackData, stackCol,
+  funnel
 } from "./utils/data.js"
 
 import ProgressBars from './components/ProgressBars'
@@ -102,6 +106,20 @@ export default function App() {
           <div className={classes.flexDiv}>
             {colorsProgressBar.map((e, i) => <Legend key={i} data={[e]} />)}
           </div>
+        </div>
+
+        <div className={classes.basicDiv}>
+          <Stack data={stackData} />
+          <div className={classes.flexDiv}>
+            {stackCol.map((e, i) => <Legend key={i} data={[e]} />)}
+          </div>
+        </div>
+
+        <div className={classes.basicDiv}>
+          <HorizontalFunnel data={funnel} />
+          {/* <div className={classes.flexDiv}>
+            {stackCol.map((e, i) => <Legend key={i} data={[e]} />)}
+          </div> */}
         </div>
 
       </div>

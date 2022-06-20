@@ -176,3 +176,81 @@ export const colorsProgressBar = [
     { color: "#6BCB77", label: "Good" },
     { color: "#4D96FF", label: "High" },
 ]
+
+export const stackData = [
+    {
+        "group": "banana",
+        "Nitrogen": 12,
+        "normal": 1,
+        "stress": 13
+    },
+    {
+        "group": "poacee",
+        "Nitrogen": 6,
+        "normal": 6,
+        "stress": 33
+    },
+    {
+        "group": "sorgho",
+        "Nitrogen": 11,
+        "normal": 28,
+        "stress": 12
+    },
+    {
+        "group": "jds",
+        "Nitrogen": 19,
+        "normal": 6,
+        "stress": 1
+    },
+    {
+        "group": "jsj",
+        "Nitrogen": 19,
+        "normal": 6,
+        "stress": 11
+    },
+    {
+        "group": "jsdks",
+        "Nitrogen": 19,
+        "normal": 6,
+        "stress": 1
+    },
+    {
+        "group": "jsjs",
+        "Nitrogen": 7,
+        "normal": 6,
+        "stress": 1
+    },
+    {
+        "group": "kjds",
+        "Nitrogen": 9,
+        "normal": 6,
+        "stress": 1
+    },
+    {
+        "group": "wed",
+        "Nitrogen": 19,
+        "normal": 69,
+        "stress": 1
+    },
+    {
+        "group": "alas",
+        "Nitrogen": 19,
+        "normal": 6,
+        "stress": 15
+    },
+]
+
+export const stackCol = [
+    { color: 'rgba(255, 165, 0, 0.8)', label: "Data 1" },
+    { color: 'rgba(55, 126, 184, 0.8)', label: "Data 2" },
+    { color: 'rgba(31, 70, 144, 0.8)', label: "Data 3" }
+]
+
+export const funnel = [
+    { label: "Lead", value: 20 },
+    { label: "Offer sent", value: 18 },
+    { label: "Call scheduled", value: 12 },
+    { label: "Data received", value: 8 },
+    { label: "Approved", value: 4 },
+    { label: "Implemented", value: 2 },
+]

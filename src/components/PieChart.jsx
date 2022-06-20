@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import * as d3 from "d3";
 import { useResizeObserver } from "../utils/resizeObserver";
 import { degToRad } from "../utils/utils";
@@ -31,7 +31,6 @@ export default function PieChart({ data, selectedSvg, svgWrapper }) {
             chartData1[0] = chartData1[1]
             chartData1[1] = temp
         }
-        console.log(chartData1)
 
         let angle = chartData1.map((d) => (d.percentage * 360) / 100)
         const svg = d3.select(selectedSvg.current);
