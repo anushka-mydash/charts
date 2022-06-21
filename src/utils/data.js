@@ -264,3 +264,36 @@ export const scatterPlot = [
     [28, 37], [33, 37], [86, 74],
     [22, 32], [33, 19], [95, 15], [95, 45], [95, 39],
 ]
+
+export const scatterPlot1 =
+    [
+        [6, 57], [6, 67], [12, 54], [19, 59], [24, 60], [25, 53], [28, 67], [31, 67], [31, 65],
+        [32, 65], [34, 66], [36, 63], [42, 59], [44, 61], [50, 52], [50, 51], [61, 61],
+        [66, 58], [67, 62], [69, 52], [73, 50], [74, 52], [76, 66], [79, 67], [84, 53],
+        [86, 65], [90, 62], [90, 68], [90, 57], [97, 56]
+    ]
+
+export const scatterPlot2 = [
+    [3, 29], [4, 28], [11, 25], [11, 28], [13, 24], [15, 31], [16, 21], [16, 39], [21, 20],
+    [23, 37], [23, 20], [26, 33], [31, 30], [32, 20], [36, 37], [50, 33], [52, 29], [55, 24],
+    [56, 31], [57, 36], [63, 23], [64, 37], [64, 36], [65, 38], [68, 27], [70, 29], [72, 24],
+    [76, 20], [86, 22], [88, 36]
+]
+
+export const MultipleScatterPlotLegend = [
+    { label: "Data 1", color: "#1363DF" },
+    { label: "Average Data 1", color: "#3AB0FF" },
+    { label: "Data 2", color: "#F15412" },
+    { label: "Average Data 2", color: "#FFB562" },
+]
+
+// const findCoords = () => {
+//     let arr = []
+//     for (let i = 0; i < 30; i++) {
+//         arr.push([Math.floor(generateRandomNum(100)), Math.floor(generateRandomNum(40, 20))])
+//     }
+//     console.log(arr)
+//     return arr;
+// }
+// export const scatterPlot2 = findCoords()
+

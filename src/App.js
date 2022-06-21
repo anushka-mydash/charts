@@ -11,6 +11,7 @@ import Stack from './components/Stack'
 import HorizontalFunnel from './components/HorizontalFunnel'
 import AreaChart from './components/AreaChart'
 import ScatterPlot from './components/ScatterPlot'
+import MultipleScatterPlot from './components/MultipleScatterPlot'
 import VerticalFunnel from './components/VerticalFunnel'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
@@ -26,7 +27,7 @@ import {
   colorsProgressBar,
   stackData, stackCol,
   funnel,
-  scatterPlot
+  scatterPlot, scatterPlot1, scatterPlot2, MultipleScatterPlotLegend
 } from "./utils/data.js"
 
 import ProgressBars from './components/ProgressBars'
@@ -139,6 +140,22 @@ export default function App() {
           <VerticalFunnel data={funnel} />
         </div>
 
+        <div className={classes.basicDiv}>
+          <MultipleScatterPlot
+            data1={scatterPlot1}
+            colors1={{
+              dot: "#1363DF", line: "#3AB0FF"
+            }}
+            data2={scatterPlot2}
+            colors2={{
+              dot: "#F15412", line: "#FFB562"
+            }}
+          />
+
+          <div className={classes.flexDiv}>
+            {MultipleScatterPlotLegend.map((e, i) => <Legend key={i} data={[e]} />)}
+          </div>
+        </div>
       </div>
     </div>
 

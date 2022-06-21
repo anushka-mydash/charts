@@ -41,7 +41,7 @@ export const createGradient = (svg, i) => {
 }
 
 export const generateRandomNum = (max, min = 1) => {
-    return ((Math.random() * max) + min)
+    return ((Math.random() * (max - min)) + min)
 }
 
 export const generateRandomCountry = (max = countriesId.length, min = 0) => {
