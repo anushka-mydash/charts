@@ -51,19 +51,11 @@ export default function HorizontalFunnel({ data }) {
 
         const drawTrapezoid = function (d, i) {
             let data;
-            if (i === 0) {
+            if (i === 0 || i === sortedData.length - 1) {
                 data = [
                     { x: barWidth * i + 1, y: prevD * i },
                     { x: barWidth * (i + 1) - 1, y: prevD * i },
                     { x: barWidth * (i + 1) - 1, y: chartHeight - prevD * i },
-                    { x: barWidth * i + 1, y: chartHeight - prevD * i },
-                ]
-            }
-            else if (i === sortedData.length - 1) {
-                data = [
-                    { x: barWidth * i + 1, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1 + 10, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1 + 10, y: chartHeight - prevD * i },
                     { x: barWidth * i + 1, y: chartHeight - prevD * i },
                 ]
             }

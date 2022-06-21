@@ -33,47 +33,39 @@ export default function VerticalFunnel({ data }) {
             }
         })
 
-        const margin = 120;
+        const margin = 100;
         const chartWidth = dimensions.width - margin;
         const chartHeight = dimensions.height - margin;
 
         const svg = d3.select(selectedSvg.current);
 
         const g = svg.append("g")
-            .attr("transform", "translate(" + 60 + "," + 60 + ")");
+            .attr("transform", "translate(" + margin / 2 + "," + margin / 2 + ")");
 
         const lineFunction = d3.line()
             .x(function (d) { return d.x; })
             .y(function (d) { return d.y; })
 
-        const barWidth = (chartWidth - 50) / sortedData.length;
-        let diff = 0, prevD = 1;
+        const barWidth = (chartHeight) / sortedData.length;
+        let diff = barWidth, prevD = 1;
 
         const drawTrapezoid = function (d, i) {
             let data;
-            if (i === 0) {
+            if (i === 0 || i === sortedData.length - 1) {
+                prevD = diff - 10
                 data = [
-                    { x: barWidth * i + 1, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1, y: chartHeight - prevD * i },
-                    { x: barWidth * i + 1, y: chartHeight - prevD * i },
-                ]
-            }
-            else if (i === sortedData.length - 1) {
-                data = [
-                    { x: barWidth * i + 1, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1 + 10, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1 + 10, y: chartHeight - prevD * i },
-                    { x: barWidth * i + 1, y: chartHeight - prevD * i },
+                    { x: diff * i, y: diff * i + 1 },
+                    { x: chartWidth - diff * i, y: diff * i + 1 },
+                    { x: chartWidth - prevD * (i + 1), y: diff * (i + 1) - 1 },
+                    { x: prevD * (i + 1), y: diff * (i + 1) - 1 },
                 ]
             }
             else {
-                diff = 25;
                 data = [
-                    { x: barWidth * i + 1, y: prevD * i },
-                    { x: barWidth * (i + 1) - 1, y: diff * (i + 1) },
-                    { x: barWidth * (i + 1) - 1, y: chartHeight - diff * (i + 1) },
-                    { x: barWidth * i + 1, y: chartHeight - prevD * i },
+                    { x: prevD * i, y: diff * i + 1 },
+                    { x: chartWidth - prevD * i, y: diff * i + 1 },
+                    { x: chartWidth - diff * (i + 1), y: diff * (i + 1) - 1 },
+                    { x: diff * (i + 1), y: diff * (i + 1) - 1 },
                 ]
                 prevD = diff
             }
@@ -95,19 +87,13 @@ export default function VerticalFunnel({ data }) {
             .attr("fill", "white")
             .text(d => {
                 let text = d.percentage + "%"
-                if (100 - d.percentage) {
-                    text += "(-" + (100 - d.percentage) + "%)"
-                }
                 return text;
             })
             .attr("transform", (d, i) => {
-                if (100 - d.percentage)
-                    return `translate(${(barWidth / 2 - 45) + (barWidth * i)},${chartHeight / 2})`
-
-                return `translate(${(barWidth / 2 - 20) + (barWidth * i)},${chartHeight / 2})`
+                return `translate(${(chartWidth / 2 - 17)},${barWidth + barWidth * i - 30})`
             })
             .attr("font-weight", 700)
-            .attr("font-size", 20)
+            .attr("font-size", 18)
 
         g.selectAll(".funnelTextDesc")
             .data(sortedData)
@@ -121,13 +107,13 @@ export default function VerticalFunnel({ data }) {
                 let len;
 
                 if (text.length < 10)
-                    len = 47
+                    len = 18
                 else if (text.length <= 15)
-                    len = 30
+                    len = 38
                 else
-                    len = 17
+                    len = 43
 
-                return `translate(${(len) + (barWidth * i)},${20 + chartHeight / 2})`
+                return `translate(${(chartWidth / 2 - len)},${barWidth + barWidth * i - 12})`
             })
             .attr("font-size", 14)
     }, [dimensions, data])

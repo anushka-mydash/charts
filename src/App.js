@@ -11,6 +11,7 @@ import Stack from './components/Stack'
 import HorizontalFunnel from './components/HorizontalFunnel'
 import AreaChart from './components/AreaChart'
 import ScatterPlot from './components/ScatterPlot'
+import VerticalFunnel from './components/VerticalFunnel'
 import Legend from './components/Legends/Legends'
 import classes from "./styles.module.scss"
 
@@ -132,6 +133,10 @@ export default function App() {
             <Legend data={[{ color: "#3AB0FF", label: "Data" }]} />
             <Legend data={[{ color: "#F15412", label: "Data Avg" }]} />
           </div>
+        </div>
+
+        <div className={classes.basicDiv}>
+          <VerticalFunnel data={funnel} />
         </div>
 
       </div>
