@@ -9,11 +9,45 @@ export default function ScatterPlot({ data }) {
 
     const dimensions = useResizeObserver(svgWrapper);
 
+    const findCoords = () => {
+        let res = [];
+
+        data = data.sort((a, b) => a[0] - b[0])
+        let x1 = data[0][0], x2 = data[data.length - 1][0], y1 = 0, y2 = 0;
+
+        if (x1 !== 0)
+            res.push([0, 0])
+
+        let dataFirst = data.filter(d => d[0] === x1)
+        let dataLast = data.filter(d => d[0] === x2)
+
+        dataFirst.forEach(d => {
+            y1 += d[1];
+        })
+        y1 /= dataFirst.length;
+
+        dataLast.forEach(d => {
+            y2 += d[1];
+        })
+        y2 /= dataLast.length;
+
+        res.push([x1, y1])
+        res.push([x2, y2])
+
+        if (x2 !== 100) {
+            res.push([100, y2])
+        }
+
+        return res
+
+    }
+
     useEffect(() => {
 
         if (!dimensions) {
             return;
         }
+        const coordinates = findCoords();
 
         const margin = 200;
         const chartWidth = dimensions.width - margin;
@@ -56,6 +90,18 @@ export default function ScatterPlot({ data }) {
             .attr('class', classes.axisGrid)
             .call(yAxisGrid);
 
+        const line = d3.line()
+            .x(function (d) { return x(d[0]); })
+            .y(function (d) { return y(d[1]); })
+
+        g.append("path")
+            .datum(coordinates)
+            .attr("class", "line")
+            .attr("d", line)
+            .style("fill", "none")
+            .style("stroke", "#F15412")
+            .style("stroke-width", "3");
+
         g.append("g")
             .selectAll("dot")
             .data(data)
@@ -67,6 +113,8 @@ export default function ScatterPlot({ data }) {
             .style("fill", "#3AB0FF")
             .style("stroke", "white")
 
+
+        // eslint-disable-next-line
     }, [dimensions, data])
 
     return (

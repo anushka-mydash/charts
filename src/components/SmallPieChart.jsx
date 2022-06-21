@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import * as d3 from "d3";
 import { useResizeObserver } from "../utils/resizeObserver";
 // import classes from "../styles.module.scss"

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Legends from "./Legends/Legends";
 import PieChart from "./PieChart";
 import SmallPieChart from "./SmallPieChart";
